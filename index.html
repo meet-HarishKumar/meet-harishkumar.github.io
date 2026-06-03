@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harish Kumar · GRC & Banking Technology Leader</title>
+<meta name="description" content="Harish Kumar — 17 years leading banking technology, GRC platforms, and enterprise risk architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #0D1F35;
+    --navy2:   #152840;
+    --steel:   #1E4A7A;
+    --accent:  #4A90C4;
+    --gold:    #C9A84C;
+    --white:   #F5F7FA;
+    --muted:   #8FA3B8;
+    --border:  rgba(74,144,196,0.18);
+    --card-bg: rgba(21,40,64,0.7);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(13,31,53,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--white); text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 0.82rem; font-weight: 400;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ────────────────────────────────────────── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 5rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 40%, rgba(30,74,122,0.35) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 10% 80%, rgba(74,144,196,0.12) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(74,144,196,1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74,144,196,1) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 780px; }
+  .hero-eyebrow {
+    font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.4rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block;
+    width: 32px; height: 1px; background: var(--accent);
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    font-weight: 700; line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.6rem;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .hero-sub {
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 560px; margin-bottom: 2.8rem;
+    line-height: 1.8;
+  }
+  .hero-tags {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 3rem;
+  }
+  .tag {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 2px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+  .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none;
+    padding: 13px 28px; font-size: 0.82rem;
+    font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; border-radius: 2px;
+    transition: all 0.25s;
+  }
+  .btn-primary {
+    background: var(--accent); color: var(--navy);
+  }
+  .btn-primary:hover { background: #5ca0d4; }
+  .btn-outline {
+    border: 1px solid var(--border); color: var(--muted);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── STATS BAR ───────────────────────────────────── */
+  .stats-bar {
+    background: var(--navy2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2.4rem 4rem;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem; font-weight: 700;
+    color: var(--accent); line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 0.72rem; font-weight: 400;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── SECTIONS ────────────────────────────────────── */
+  section { padding: 6rem 4rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 24px; height: 1px; background: var(--accent);
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600; line-height: 1.2;
+    margin-bottom: 3rem;
+  }
+
+  /* ── ABOUT ───────────────────────────────────────── */
+  #about { background: var(--navy2); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+  .about-text p {
+    color: var(--muted); font-size: 0.97rem;
+    line-height: 1.85; margin-bottom: 1.2rem;
+  }
+  .about-text p strong { color: var(--white); font-weight: 500; }
+  .about-certs { }
+  .cert-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .cert-item:last-child { border-bottom: none; }
+  .cert-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .cert-name { font-size: 0.88rem; font-weight: 500; color: var(--white); }
+  .cert-body { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+  /* ── EXPERIENCE ──────────────────────────────────── */
+  #experience { }
+  .timeline { position: relative; padding-left: 2px; }
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .tl-item {
+    position: relative;
+    padding: 0 0 3.5rem 2.8rem;
+  }
+  .tl-item::before {
+    content: ''; position: absolute;
+    left: -5px; top: 8px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--navy2);
+    border: 2px solid var(--accent);
+  }
+  .tl-period {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 6px;
+  }
+  .tl-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--white); margin-bottom: 4px;
+  }
+  .tl-org {
+    font-size: 0.82rem; color: var(--steel);
+    font-style: italic; margin-bottom: 14px;
+    color: #6B9EC4;
+  }
+  .tl-bullets { list-style: none; }
+  .tl-bullets li {
+    font-size: 0.88rem; color: var(--muted);
+    line-height: 1.7; padding: 3px 0 3px 16px;
+    position: relative;
+  }
+  .tl-bullets li::before {
+    content: '–'; position: absolute; left: 0;
+    color: var(--accent);
+  }
+  .tl-metrics {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 12px;
+  }
+  .tl-metric {
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 4px 12px;
+    background: rgba(74,144,196,0.1);
+    border: 1px solid rgba(74,144,196,0.25);
+    color: var(--accent); border-radius: 2px;
+  }
+
+  /* ── THOUGHT LEADERSHIP ──────────────────────────── */
+  #writing { background: var(--navy2); }
+  .articles-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .article-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px; padding: 1.8rem;
+    text-decoration: none; color: inherit;
+    display: flex; flex-direction: column;
+    transition: border-color 0.25s, transform 0.25s;
+    backdrop-filter: blur(8px);
+  }
+  .article-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .article-tag {
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 12px;
+  }
+  .article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--white); line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .article-desc {
+    font-size: 0.82rem; color: var(--muted);
+    line-height: 1.7; flex: 1;
+    margin-bottom: 1.4rem;
+  }
+  .article-link {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .article-link::after { content: '→'; }
+  .articles-note {
+    text-align: center; margin-top: 2.5rem;
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .articles-note a { color: var(--accent); text-decoration: none; }
+  .articles-note a:hover { text-decoration: underline; }
+
+  /* ── CONTACT ─────────────────────────────────────── */
+  #contact { text-align: center; }
+  .contact-inner { max-width: 580px; margin: 0 auto; }
+  .contact-inner p {
+    color: var(--muted); font-size: 1rem;
+    line-height: 1.8; margin-bottom: 2.5rem;
+  }
+  .contact-links {
+    display: flex; justify-content: center;
+    gap: 1.5rem; flex-wrap: wrap;
+  }
+  .contact-link {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid var(--border); border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--navy);
+  }
+  footer p { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── FADE-IN ANIMATION ───────────────────────────── */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { padding: 7rem 1.5rem 4rem; }
+    .stats-bar { grid-template-columns: repeat(2,1fr); padding: 2rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .articles-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 8px; text-align: center; padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">HK</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#writing">Writing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Banking Technology · GRC · Enterprise Risk</div>
+    <h1>Building the<br>platforms that<br><em>manage risk</em><br>at scale.</h1>
+    <p class="hero-sub">17 years leading banking technology — from architecting a bank-wide operational risk platform to directing 20+ teams across enterprise card and fraud systems.</p>
+    <div class="hero-tags">
+      <span class="tag">GRC Platform Build</span>
+      <span class="tag">Operational Risk</span>
+      <span class="tag">RCSA & Control Testing</span>
+      <span class="tag">Enterprise Architecture</span>
+      <span class="tag">SAFe · PSM-II</span>
+      <span class="tag">AI Governance</span>
+      <span class="tag">Blockchain</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-primary">View Experience</a>
+      <a href="#writing" class="btn btn-outline">Thought Leadership</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat fade-up">
+    <div class="stat-num">17</div>
+    <div class="stat-label">Years in Banking Tech</div>
+  </div>
+  <div class="stat fade-up" style="transition-delay:0.1s">
+    <div class="stat-num">180</div>
+    <div class="stat-label">Team Members Led</div>
+  </div>
+  <div class="stat fade-up" style="transition-delay:0.2s">
+    <div class="stat-num">30+</div>
+    <div class="stat-label">Applications Delivered</div>
+  </div>
+  <div class="stat fade-up" style="transition-delay:0.3s">
+    <div class="stat-num">8</div>
+    <div class="stat-label">ORM Platform Modules</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <h2>Risk domain expertise<br>meets delivery command.</h2>
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p>I'm a banking technology leader who has spent 17 years at the intersection of <strong>risk, compliance, and enterprise platform delivery</strong>. My career started in .NET development building risk reporting systems, evolved into six years as the sole architect of a bank-wide operational risk platform, and now spans directing concurrent delivery across 20+ teams for a global banking client.</p>
+        <p>What makes my profile uncommon is the full-stack view I bring — I've written the requirements, designed the architecture, led the build, and managed the delivery portfolio. I understand <strong>what a GRC platform needs to do</strong> at the regulatory layer, not just the technical one.</p>
+        <p>More recently I've been investing in <strong>AI governance and AI-enabled GRC</strong> — holding both a Claude Certified Architect (CCA-F) and AIGP designation — which I believe is the next frontier for risk platforms in banking.</p>
+        <p>I also shape competitive RFP responses for major banking technology pursuits, bringing a client-side lens to solution design that's led to a consistent win record.</p>
+      </div>
+      <div class="about-certs fade-up" style="transition-delay:0.15s">
+        <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;">Certifications</div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div><div class="cert-name">ORM — PRMIA</div><div class="cert-body">Operational Risk Management Professional</div></div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div><div class="cert-name">TOGAF Business Architecture</div><div class="cert-body">Enterprise & Business Architecture · The Open Group</div></div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div><div class="cert-name">PSM-II · PSPO-I · PAL-I</div><div class="cert-body">Advanced Scrum & Agile Leadership · Scrum.org</div></div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div><div class="cert-name">SAFe 6</div><div class="cert-body">Scaled Agile Framework</div></div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div><div class="cert-name">CCA-F — Claude Certified Architect</div><div class="cert-body">Anthropic</div></div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div><div class="cert-name">AIGP — IAPP</div><div class="cert-body">AI Governance Professional</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Experience</div>
+    <h2>17 years. One through-line:<br>banking risk at scale.</h2>
+    <div class="timeline">
+
+      <div class="tl-item fade-up">
+        <div class="tl-period">2021 – Present</div>
+        <div class="tl-role">Programme Delivery Lead — Banking Line of Business</div>
+        <div class="tl-org">Global Banking Client · Card Fraud, Credit/Debit & Customer Platforms</div>
+        <ul class="tl-bullets">
+          <li>Directing concurrent delivery across 20+ teams and 300+ professionals spanning credit/debit fraud systems, card management, customer document management, and strategic priority initiatives.</li>
+          <li>Accountable for delivery governance, capacity planning, dependency management, and C-suite reporting across a 30+ application portfolio with a $15M+ annual budget.</li>
+          <li>Driving scaled Agile adoption (SAFe) across delivery units and shaping competitive RFP responses contributing to a consistent win record.</li>
+        </ul>
+        <div class="tl-metrics">
+          <span class="tl-metric">300+ headcount</span>
+          <span class="tl-metric">20+ teams</span>
+          <span class="tl-metric">30+ applications</span>
+          <span class="tl-metric">$15M+ budget</span>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up">
+        <div class="tl-period">2019 – 2021</div>
+        <div class="tl-role">Lead Business Analyst & Architect — Blockchain & Infrastructure</div>
+        <div class="tl-org">Concurrent Programmes · Blockchain Applications & Infrastructure Platforms</div>
+        <ul class="tl-bullets">
+          <li>Defined complete business and functional requirements for three blockchain-based applications covering audit, metal settlement, and secure information exchange.</li>
+          <li>Concurrently led architecture definition for an infrastructure-as-a-service offering delivering shared workspace provisioning as a one-click self-service solution.</li>
+        </ul>
+        <div class="tl-metrics">
+          <span class="tl-metric">3 blockchain apps</span>
+          <span class="tl-metric">Concurrent programmes</span>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up">
+        <div class="tl-period">2014 – 2018</div>
+        <div class="tl-role">Lead Business Analyst & Business Architect — Operational Risk Platform</div>
+        <div class="tl-org">Large Banking Client · Enterprise GRC Ecosystem Build</div>
+        <ul class="tl-bullets">
+          <li>Sole architect for a bank-wide operational risk platform — authored end-to-end requirements across all 8 modules: RCSA, control testing and records, risk events, risk acceptance, action plans, reporting, and reference data management.</li>
+          <li>Platform became the bank's central system-of-record for the full operational risk lifecycle, supporting regulatory examinations and internal audit cycles enterprise-wide.</li>
+          <li>Led a 180-member cross-functional team over a 4-year build, managing requirements, phased delivery, and executive stakeholder alignment throughout.</li>
+        </ul>
+        <div class="tl-metrics">
+          <span class="tl-metric">180-member team</span>
+          <span class="tl-metric">4-year build</span>
+          <span class="tl-metric">8 modules</span>
+          <span class="tl-metric">Bank-wide adoption</span>
+        </div>
+      </div>
+
+      <div class="tl-item fade-up">
+        <div class="tl-period">2009 – 2013</div>
+        <div class="tl-role">.NET Developer & Team Lead — Risk Reporting</div>
+        <div class="tl-org">Large Banking Client · Risk Reporting Systems</div>
+        <ul class="tl-bullets">
+          <li>Developed risk reporting solutions and led a development team delivering regulatory and management information systems — establishing the technical foundation for a career-long focus on banking risk technology.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THOUGHT LEADERSHIP -->
+<section id="writing">
+  <div class="section-inner">
+    <div class="section-label">Thought Leadership</div>
+    <h2>Writing on risk, technology<br>and the future of GRC.</h2>
+    <div class="articles-grid">
+
+      <a href="https://medium.com/@harish.bvp/from-trigger-based-rcsa-to-agentic-ai-are-we-ready-for-autonomous-risk-operations-34927e178f9e" target="_blank" rel="noopener" class="article-card fade-up">
+        <div class="article-tag">GRC · Agentic AI</div>
+        <div class="article-title">From Trigger-Based RCSA to Agentic AI: Are We Ready for Autonomous Risk Operations?</div>
+        <div class="article-desc">Exploring what it means for banks to move from static, trigger-based risk assessments toward AI agents that can autonomously monitor, assess, and respond to operational risk in real time.</div>
+        <div class="article-link">Read on Medium</div>
+      </a>
+
+      <div class="article-card fade-up" style="transition-delay:0.1s;opacity:0.5;cursor:default;">
+        <div class="article-tag">Operational Risk</div>
+        <div class="article-title" style="color:var(--muted);">Next article coming soon</div>
+        <div class="article-desc">A new piece on operational risk and GRC platform design is in progress. Check back shortly.</div>
+        <div class="article-link" style="color:var(--muted);pointer-events:none;">Coming Soon</div>
+      </div>
+
+      <div class="article-card fade-up" style="transition-delay:0.2s;opacity:0.5;cursor:default;">
+        <div class="article-tag">Banking Technology</div>
+        <div class="article-title" style="color:var(--muted);">Next article coming soon</div>
+        <div class="article-desc">More writing on the intersection of banking technology, AI governance, and enterprise risk architecture coming soon.</div>
+        <div class="article-link" style="color:var(--muted);pointer-events:none;">Coming Soon</div>
+      </div>
+
+    </div>
+    <p class="articles-note">More articles on <a href="https://medium.com/@harish.bvp" target="_blank" rel="noopener">Medium →</a></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner contact-inner">
+    <div class="section-label" style="justify-content:center">Get in Touch</div>
+    <h2>Open to the right<br>conversation.</h2>
+    <p>If you're building a GRC platform for a bank and looking for someone who has done it before — from requirements through to enterprise adoption — I'd be glad to talk.</p>
+    <div class="contact-links">
+      <a href="mailto:harish.bvp@live.com" class="contact-link">✉ Email</a>
+      <a href="https://www.linkedin.com/in/harish-kumar-59a0b3173/" target="_blank" rel="noopener" class="contact-link">in LinkedIn</a>
+      <a href="https://medium.com/@harish.bvp" target="_blank" rel="noopener" class="contact-link">✍ Medium</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Harish Kumar · GRC & Banking Technology Leader</p>
+  <p>Built to be found by the right people.</p>
+</footer>
+
+<script>
+  // Fade-up on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
